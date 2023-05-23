@@ -1,4 +1,4 @@
-javaimport java.util.Scanner;
+import java.util.Scanner;
 
 //create ATMExample class to implement the ATM functionality  
 public class ATMExample {
@@ -28,19 +28,22 @@ public class ATMExample {
             switch(choice)  
             {  
                 case 1:
-                  if(i>=0 || j>=0)
-                       for(k=0;k<j;k++)
+                  if(i>=0 || j>=0){
+                       for(k=0;k<=j;k++)
                        {
                         System.out.println("deposited amount is"+depo[k]);
                        }  
-                       for(k=0;k<i;k++) 
+                       for(k=0;k<=i;k++) 
                        {
                         System.out.println("withdrawn amount is"+wtdr[k]);
                        }
+                      }
                     else
                     {
                         System.out.println("no deposit or withdraw happened");
                     }
+                    System.out.println("");  
+                    break;
                 case 2:  
         System.out.print("Enter money to be withdrawn:");  
                       
@@ -81,12 +84,16 @@ public class ATMExample {
    
                 case 4:  
         //enter the money to be trasfered
+                    System.out.println("enter the amount to be transfered");
         transfer=sc.nextInt();
+                    
         if(balance >= transfer)  
         {  
             //remove the withdrawl amount from the total balance  
-            balance = balance - trasfer;  
-            System.out.println("your money has been trasfered");  
+            balance = balance - transfer;  
+            System.out.println("your money has been trasfered"); 
+            i++;
+            wtdr[i]=transfer;
         }  
         else  
         {  
